@@ -1,7 +1,7 @@
 exports.ERC20ABI = ["function decimals() external view returns (uint8)"];
 
 exports.factoryABI = [
-  "function getPair(address tokenA, address tokenB) external view returns (address pair);",
+  "function getPair(address tokenA, address tokenB) external view returns (address pair)",
 ];
 
 exports.pairABI = [
