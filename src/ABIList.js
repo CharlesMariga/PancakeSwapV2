@@ -11,5 +11,5 @@ exports.pairABI = [
 ];
 
 exports.routerABI = [
-  "function getAmountsOut(uint amountIn, address[] memory path) public view virtual override returns (uint[] memory amounts)",
+  "function getAmountsOut(uint amountIn, address[] memory path) public view returns (uint[] memory amounts)",
 ];

@@ -14,8 +14,6 @@ const provider = new ethers.providers.JsonRpcProvider(
   "https://bsc-dataseed.binance.org/"
 );
 
-console.log(provider);
-
 // Connect to factory contract
 const contractFactory = new ethers.Contract(
   addressFactory,
@@ -25,4 +23,13 @@ const contractFactory = new ethers.Contract(
 
 // Connect to the router contract
 const contractRouter = new ethers.Contract(addressRouter, routerABI, provider);
-console.log(provider);
+
+const getPrices = async (amountInHuman) => {
+  const contractToken = new ethers.Contract(addressFrom, ERC20ABI, provider);
+  const decimals = await contractToken.decimals();
+  const amountIn = ethers.utils.parseUnits(amountInHuman, decimals).toString();
+  console.log(amountIn);
+};
+
+const amountInHuman = "500";
+getPrices(amountInHuman);
